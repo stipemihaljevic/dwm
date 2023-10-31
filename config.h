@@ -51,9 +51,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "kitty",   NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ "St",      	NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "alacritty",	NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,      	NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -83,7 +83,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -123,6 +123,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_r,      spawn,          SHCMD("reboot")},
 	{ MODKEY|ControlMask|ShiftMask, XK_p,      spawn,          SHCMD("poweroff")},
+	{ MODKEY,			XK_p,	   spawn,	   SHCMD("pavucontrol")},
 };
 
 /* button definitions */
