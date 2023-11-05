@@ -1,17 +1,16 @@
 # DWM configuration
-dwm is an extremely fast, small, and dynamic window manager for X.
+DWM is an extremely fast, small, and dynamic window manager for Xorg.
 
 # Requirements
-    ```bash
-    sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig xorg-xinit
+    $ sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig xorg-xinit
 
-# To clone the necessary configuration into the `/opt/git` directory, use the following command:
-    ```bash
-    git clone [URL_OF_CONFIGURATION_REPOSITORY] /opt/git
+# Clone
+    Clone the necessary configuration into the `/opt/git` directory:
+
+    $ git clone https://github.com/stipemihaljevic/dwm /opt/git
 
 # Build / compile
-    ```bash
-    sudo make clean install
+    $ sudo make clean install
 
 # .xinitrc config
 
