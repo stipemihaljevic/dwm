@@ -12,6 +12,16 @@ DWM is an extremely fast, small, and dynamic window manager for Xorg.
 # Build / compile
     $ sudo make clean install
 
+# Make DWM appear on display manager (lightdm,ly,sddm,gdm...)
+    Copy dwm.desktop file to xsessions directory (root needed)
+
+    $ cp -rv /opt/git/dwm/dwm.desktop /usr/share/xsessions
+
+
+    If the `/usr/share/xsessions` directory does not exist, run the following command (root needed):
+
+    mkdir -p /usr/share/xsessions
+
 # .xinitrc config
 
     while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
