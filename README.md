@@ -16,9 +16,9 @@ Install required packages from aur:
     $ yay -S lxpolkit-git
 
 # Clone
-    Clone the necessary configuration into the `/opt/git` directory:
+Clone the necessary configuration into the `/opt/git` directory:
 
-    $ git clone https://github.com/stipemihaljevic/dwm /opt/git
+    $ git clone https://github.com/stipemihaljevic/dwm /opt/git/dwm
 
 # Build / compile
     $ sudo make clean install
