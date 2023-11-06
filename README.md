@@ -6,10 +6,13 @@ DWM is a highly efficient, lean, and adaptable window manager for Xorg, designed
 
 # AUR requirements
 Install AUR helper (yay,paru...):
+
     $ git clone https://aur.archlinux.org/yay-bin /opt/git/yay-bin
     $ cd /opt/git/yay-bin
     $ makepkg -si
+
 Install required packages from aur:
+
     $ yay -S lxpolkit-git
 
 # Clone
