@@ -24,14 +24,14 @@ Clone the necessary configuration into the `/opt/git` directory:
     $ sudo make clean install
 
 # Make DWM appear on display manager (lightdm, ly, sddm, gdm...)
-Copy dwm.desktop file to xsessions directory (root needed):
+Copy dwm.desktop file to xsessions directory:
 
-    $ cp -rv /opt/git/dwm/dwm.desktop /usr/share/xsessions
+    $ sudo cp -r /opt/git/dwm/dwm.desktop /usr/share/xsessions
 
 
-If the `/usr/share/xsessions` directory does not exist, run the following command (root needed):
+If the `/usr/share/xsessions` directory does not exist, run the following command:
 
-    mkdir -p /usr/share/xsessions
+    sudo mkdir -p /usr/share/xsessions
 
 # .xinitrc config
 
