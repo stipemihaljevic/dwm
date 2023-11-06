@@ -31,7 +31,7 @@ Copy dwm.desktop file to xsessions directory:
 
 If the `/usr/share/xsessions` directory does not exist, run the following command:
 
-    sudo mkdir -p /usr/share/xsessions
+    $ sudo mkdir -p /usr/share/xsessions
 
 # .xinitrc config
 
