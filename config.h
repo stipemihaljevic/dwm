@@ -34,7 +34,7 @@ static const char *const autostart[] = {
   "lxpolkit", NULL,
   "dunst", NULL,
   "picom", NULL,
-  "sh", "-c", "/home/stipe/git/dwm/scripts/status", NULL,
+  "sh", "-c", "/opt/git/dwm/scripts/status", NULL,
   "feh", "--bg-fill", "/opt/git/dwm/wallpaper.png", NULL,
   NULL /* terminate */
 };
