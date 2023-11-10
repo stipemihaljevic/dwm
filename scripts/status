@@ -21,9 +21,14 @@ update_bat() {
   fi
 }
 
+update_vol() {
+  vol="🎶 $(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
+}
+
 # Display function
 display() {
   status=""
+  [[ -n "$vol" ]] && status+="$vol "
   [[ -n "$bat" ]] && status+="$bat "
   [[ -n "$time" ]] && status+="$time"
   xsetroot -name "$status"
@@ -31,6 +36,10 @@ display() {
 
 # Set up signal handlers
 trap "update_bat; display" "RTMIN+2"
+trap "update_vol; display" "RTMIN"
+
+# Initial updates
+update_vol
 
 # Main loop
 while true; do
@@ -45,4 +54,3 @@ while true; do
       ;;
   esac
 done
-
