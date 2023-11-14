@@ -17,11 +17,10 @@ static const char dmenufont[]       = "MesloLGS Nerd Font Mono:size=16";
 static const char col_1[]       = "#2E3440";
 static const char col_2[]       = "#0062ff";
 static const char col_3[]       = "#FFFFFF";
-static const char col_4[]       = "#2B313F";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_3,	col_1, 	col_2 },
-	[SchemeSel]  = { col_3, col_4,	col_4 },
+	[SchemeSel]  = { col_3, col_1,	col_1 },
 };
 
 static const char *const autostart[] = {
@@ -81,7 +80,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_1, "-nf", col_3, "-sb", col_4, "-sf", col_3, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_1, "-nf", col_3, "-sb", col_1, "-sf", col_3, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
