@@ -14,8 +14,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = { "MesloLGS Nerd Font Mono:size=16" };
 static const char dmenufont[]       = "MesloLGS Nerd Font Mono:size=16";
-static const char col_1[]       = "#2E3440";
-static const char col_2[]       = "#0062ff";
+static const char col_1[]       = "#1E2128";
+static const char col_2[]       = "#0046BF";
 static const char col_3[]       = "#FFFFFF";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -88,7 +88,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      spawn,          SHCMD ("google-chrome-stable")},
+	{ MODKEY,                       XK_b,      spawn,          SHCMD ("firefox")},
 	{ MODKEY,                       XK_e,      spawn,          SHCMD ("thunar")},
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
