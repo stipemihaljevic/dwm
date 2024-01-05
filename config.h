@@ -34,7 +34,6 @@ static const char *const autostart[] = {
   "lxpolkit", NULL,
   "dunst", NULL,
   "picom", NULL,
-  "setxkbmap", "hr", 
   NULL /* terminate */
 };
 
