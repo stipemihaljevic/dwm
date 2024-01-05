@@ -119,8 +119,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_r,      spawn,          SHCMD("reboot")},
-	{ MODKEY|ControlMask|ShiftMask, XK_p,      spawn,          SHCMD("poweroff")},
+	{ MODKEY|ControlMask|ShiftMask, XK_r,      spawn,          SHCMD("systemctl reboot")},
+	{ MODKEY|ControlMask|ShiftMask, XK_p,      spawn,          SHCMD("systemctl poweroff")},
 	{ MODKEY|ControlMask|ShiftMask, XK_s,	   spawn,	   SHCMD("systemctl suspend")},
 	{ MODKEY,			XK_p,	   spawn,	   SHCMD("pavucontrol")},
 };
