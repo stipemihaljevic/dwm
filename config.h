@@ -34,7 +34,6 @@ static const char *const autostart[] = {
   "lxpolkit", NULL,
   "dunst", NULL,
   "picom", NULL,
-  "xinput", "--set-prop", "10", "326", "0", NULL,
   NULL /* terminate */
 };
 
