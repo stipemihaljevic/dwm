@@ -44,6 +44,3 @@ If the `/usr/share/xsessions` directory does not exist, run the following comman
 # Configuration
 The configuration of dwm is done by creating a custom config.h
 and compiling the source code.
-
-# Credit
-The code base is sourced from @ChrisTitusTech, available at https://github.com/ChrisTitusTech/dwm-titus.
