@@ -22,7 +22,7 @@ Clone the necessary configuration into the `/opt/git` directory:
 # Build / compile
     sudo make clean install
 
-# Make DWM appear on display manager (ly)
+# Make DWM appear on display manager(ly)
 Install ly
     sudo pacman -S ly
 
