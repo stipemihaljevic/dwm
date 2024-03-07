@@ -5,9 +5,7 @@
 Install AUR helper(yay):
 
     git clone https://aur.archlinux.org/yay-bin /opt/git/yay-bin
-
     cd /opt/git/yay-bin
-
     makepkg -si
 
 Install required packages from aur:
