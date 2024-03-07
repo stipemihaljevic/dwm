@@ -1,6 +1,3 @@
-# DWM configuration
-DWM is a highly efficient, lean, and adaptable window manager for Xorg, designed by suckless.org for those who appreciate the art of personalizing their computing experience.
-
 # Requirements
     $ sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig xorg-xinit xorg-xsetroot dunst picom feh
 
