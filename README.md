@@ -29,4 +29,5 @@ Make xsessions directory
     $ sudo mkdir -p /usr/share/xsessions
 
 Copy dwm.desktop file to xsessions directory:
+
     $ sudo cp -r /opt/git/dwm/dwm.desktop /usr/share/xsessions
