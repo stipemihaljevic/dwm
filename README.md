@@ -22,6 +22,7 @@ Clone the necessary configuration into the `/opt/git` directory:
 
 # Make DWM appear on display manager(ly)
 Install ly
+
     sudo pacman -S ly
 
 Make xsessions directory
