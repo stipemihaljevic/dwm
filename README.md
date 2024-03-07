@@ -40,7 +40,3 @@ If the `/usr/share/xsessions` directory does not exist, run the following comman
     	sleep 1
     done &
     exec dwm
-
-# Configuration
-The configuration of dwm is done by creating a custom config.h
-and compiling the source code.
