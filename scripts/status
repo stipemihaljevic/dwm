@@ -22,11 +22,20 @@ update_vol() {
   vol="🎶 $(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
 }
 
+update_wifi() {
+  if ping -c 1 google.com &> /dev/null; then
+    wifi="󰛳"
+  else
+    wifi="󰅛"
+  fi
+}
+
 # Display function
 display() {
   status=""
   [[ -n "$vol" ]] && status+=" $vol │"
   [[ -n "$bat" ]] && status+=" $bat │"
+  [[ -n "$wifi" ]] && status+=" $wifi │"
   [[ -n "$time" ]] && status+=" $time"
   xsetroot -name "$status"
 }
@@ -47,6 +56,7 @@ while true; do
     [1-5]) 
       update_time
       update_vol
+      update_wifi
       display
       ;;
   esac

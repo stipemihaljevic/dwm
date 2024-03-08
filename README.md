@@ -1,5 +1,5 @@
 # Requirements
-    sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig xorg-xinit xorg-xsetroot dunst picom feh dmenu
+    sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig xorg-xinit xorg-xsetroot dunst picom feh dmenu ttf-hack-nerd
 
 # AUR requirements
 Install AUR helper(yay):
