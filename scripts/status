@@ -12,14 +12,36 @@ update_time() {
 update_bat() {
   if [[ -e /sys/class/power_supply/BAT1/capacity ]]; then
     bat_capacity=$(< /sys/class/power_supply/BAT1/capacity)
-    bat="⚡ $bat_capacity%"
+    if (( bat_capacity == 100 )); then
+      bat="󰁹 $bat_capacity%"
+    elif (( bat_capacity >= 90 )); then
+      bat="󰂂 $bat_capacity%"
+    elif (( bat_capacity >= 80 )); then
+      bat="󰂁 $bat_capacity%"
+    elif (( bat_capacity >= 70 )); then
+      bat="󰂀 $bat_capacity%"
+    elif (( bat_capacity >= 60 )); then
+      bat="󰁿 $bat_capacity%"
+    elif (( bat_capacity >= 50 )); then
+      bat="󰁾 $bat_capacity%"
+    elif (( bat_capacity >= 40 )); then
+      bat="󰁽 $bat_capacity%"
+    elif (( bat_capacity >= 30 )); then
+      bat="󰁼 $bat_capacity%"
+    elif (( bat_capacity >= 20 )); then
+      bat="󰁻 $bat_capacity%"
+    elif (( bat_capacity >= 10 )); then
+      bat="󰁺 $bat_capacity%"
+    else
+      bat="󰂄 $bat_capacity%"
+    fi
   else
     bat="(capacity not available)"
   fi
 }
 
 update_vol() {
-  vol="🎶 $(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
+  vol="󰎈 $(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
 }
 
 update_wifi() {
