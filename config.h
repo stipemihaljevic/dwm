@@ -12,8 +12,8 @@ static const int showsystray        = 0;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "MesloLGS Nerd Font Mono:size=18" };
-static const char dmenufont[]       = "MesloLGS Nerd Font Mono:size=18";
+static const char *fonts[]          = { "MesloLGS Nerd Font Mono:size=14" };
+static const char dmenufont[]       = "MesloLGS Nerd Font Mono:size=14";
 static const char col_1[]       = "#000000";
 static const char col_2[]       = "#111111";
 static const char col_3[]       = "#FFFFFF";
@@ -55,7 +55,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.65; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.70; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen window */
