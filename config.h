@@ -127,6 +127,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_p,      spawn,          SHCMD("systemctl poweroff")},
 	{ MODKEY|ControlMask|ShiftMask, XK_s,	   spawn,	   SHCMD("systemctl suspend")},
 	{ MODKEY,			XK_p,	   spawn,	   SHCMD("pavucontrol")},
+	{ MODKEY,			XK_c,	   spawn,	   SHCMD("code")},
 };
 
 /* button definitions */
