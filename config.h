@@ -29,7 +29,7 @@ static const char *const autostart[] = {
   "xset", "-dkms", NULL,
   "dbus-update-activation-environment", "--systemd", "--all", NULL,
   "sh", "-c", "/opt/git/dwm/scripts/status", NULL,
-  "feh", "--bg-fill", "/opt/git/dwm/wallpaper.jpeg", NULL,
+  "feh", "--bg-fill", "/opt/git/dwm/wallpaper.jpg", NULL,
   "flameshot", NULL,
   "lxpolkit", NULL,
   "dunst", NULL,
