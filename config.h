@@ -15,12 +15,11 @@ static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = { "MesloLGS Nerd Font Mono:size=14" };
 static const char dmenufont[]       = "MesloLGS Nerd Font Mono:size=14";
 static const char col_1[]       = "#000000";
-static const char col_2[]       = "#111111";
-static const char col_3[]       = "#FFFFFF";
+static const char col_2[]       = "#FFFFFF";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_3,	col_1, 	col_2 },
-	[SchemeSel]  = { col_3, col_1,	col_1 },
+	[SchemeNorm] = { col_2,	col_1, 	col_1 },
+	[SchemeSel]  = { col_2, col_1,	col_1 },
 };
 
 static const char *const autostart[] = {
@@ -81,7 +80,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_1, "-nf", col_3, "-sb", col_1, "-sf", col_3, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_1, "-nf", col_2, "-sb", col_1, "-sf", col_2, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
 static Key keys[] = {
