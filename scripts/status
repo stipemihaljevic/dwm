@@ -45,7 +45,7 @@ update_vol() {
 }
 
 update_wifi() {
-  if ping -c 1 google.com &> /dev/null; then
+  if ping -c 1 ping.archlinux.org &> /dev/null; then
     wifi="󰛳"
   else
     wifi="󰅛"
