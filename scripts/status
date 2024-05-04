@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Initialize
 printf "$$" > ~/.cache/pidofbar
@@ -41,7 +41,7 @@ update_bat() {
 }
 
 update_vol() {
-  vol="󰎈 $(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
+  vol="奄 $(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
 }
 
 update_wifi() {
@@ -52,22 +52,33 @@ update_wifi() {
   fi
 }
 
+update_backlight() {
+  if [[ -e /sys/class/backlight/intel_backlight/actual_brightness ]]; then
+    actual_brightness=$(< /sys/class/backlight/intel_backlight/actual_brightness)
+    max_brightness=$(< /sys/class/backlight/intel_backlight/max_brightness)
+    backlight="☀$((actual_brightness * 100 / max_brightness))%"
+  fi
+}
+
 # Display function
 display() {
   status=""
-  [[ -n "$vol" ]] && status+=" $vol │"
-  [[ -n "$bat" ]] && status+=" $bat │"
-  [[ -n "$wifi" ]] && status+=" $wifi │"
-  [[ -n "$time" ]] && status+=" $time"
+  [[ -n "$bat" ]] && status+="$bat │"
+  [[ -n "$backlight" ]] && status+="$backlight │"
+  [[ -n "$vol" ]] && status+="$vol │"
+  [[ -n "$wifi" ]] && status+="$wifi │"
+  [[ -n "$time" ]] && status+="$time"
   xsetroot -name "$status"
 }
 
 # Set up signal handlers
-trap "update_bat; display" "RTMIN+2"
 trap "update_vol; display" "RTMIN"
+trap "update_backlight; display" "RTMIN+1"
+trap "update_bat; display" "RTMIN+2"
 
 # Initial updates
 update_vol
+update_backlight
 
 # Main loop
 while true; do

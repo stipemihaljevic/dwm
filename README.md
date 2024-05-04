@@ -1,38 +1,50 @@
-# Screenshot
+dwm - dynamic window manager
+============================
+dwm is an extremely fast, small, and dynamic window manager for X.
 
-![image](/screenshot/0.png)
+These are my configuration changes with everything pre-patched using all the patches in the `/patches` directory
 
-# Requirements
-    sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig xorg-xinit xorg-xsetroot dunst picom feh dmenu ttf-hack-nerd
 
-# AUR requirements
-Install AUR helper(yay):
+Requirements
+------------
+In order to build dwm you need the Xlib header files.
 
-    git clone https://aur.archlinux.org/yay-bin /opt/git/yay-bin
-    cd /opt/git/yay-bin
-    makepkg -si
 
-Install required packages from aur:
+Installation
+------------
+Edit config.mk to match your local setup (dwm is installed into
+the /usr/local namespace by default).
 
-    yay -S lxpolkit-git
+Afterwards enter the following command to build and install dwm (if
+necessary as root):
 
-# Clone
-Clone the necessary configuration into the `/opt/git` directory:
+    make clean install
 
-    git clone https://github.com/stipemihaljevic/dwm /opt/git/dwm
 
-# Build / compile
-    sudo make clean install
+Running dwm
+-----------
+Add the following line to your .xinitrc to start dwm using startx:
 
-# Make DWM appear on display manager(ly)
-Install ly
+    exec dwm
 
-    sudo pacman -S ly
+In order to connect dwm to a specific display, make sure that
+the DISPLAY environment variable is set correctly, e.g.:
 
-Make xsessions directory
+    DISPLAY=foo.bar:1 exec dwm
 
-    sudo mkdir -p /usr/share/xsessions
+(This will start dwm on display :1 of the host foo.bar.)
 
-Copy dwm.desktop file to xsessions directory:
+In order to display status info in the bar, you can do something
+like this in your .xinitrc:
 
-    sudo cp -r /opt/git/dwm/dwm.desktop /usr/share/xsessions
+    while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
+    do
+    	sleep 1
+    done &
+    exec dwm
+
+
+Configuration
+-------------
+The configuration of dwm is done by creating a custom config.h
+and (re)compiling the source code.
