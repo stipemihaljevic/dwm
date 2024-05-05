@@ -10,29 +10,12 @@ update_time() {
 }
 
 update_bat() {
-  if [[ -e /sys/class/power_supply/BAT1/capacity ]]; then
+  if [[ -e /sys/class/power_supply/BAT1/status && -e /sys/class/power_supply/BAT1/capacity ]]; then
     bat_capacity=$(< /sys/class/power_supply/BAT1/capacity)
-    if (( bat_capacity == 100 )); then
+    bat_status=$(< /sys/class/power_supply/BAT1/status)
+    if [[ $bat_status == "Discharging" ]]; then
       bat="󰁹 $bat_capacity%"
-    elif (( bat_capacity >= 90 )); then
-      bat="󰂂 $bat_capacity%"
-    elif (( bat_capacity >= 80 )); then
-      bat="󰂁 $bat_capacity%"
-    elif (( bat_capacity >= 70 )); then
-      bat="󰂀 $bat_capacity%"
-    elif (( bat_capacity >= 60 )); then
-      bat="󰁿 $bat_capacity%"
-    elif (( bat_capacity >= 50 )); then
-      bat="󰁾 $bat_capacity%"
-    elif (( bat_capacity >= 40 )); then
-      bat="󰁽 $bat_capacity%"
-    elif (( bat_capacity >= 30 )); then
-      bat="󰁼 $bat_capacity%"
-    elif (( bat_capacity >= 20 )); then
-      bat="󰁻 $bat_capacity%"
-    elif (( bat_capacity >= 10 )); then
-      bat="󰁺 $bat_capacity%"
-    else
+    elif [[ $bat_status == "Charging" ]]; then
       bat="󰂄 $bat_capacity%"
     fi
   else
@@ -41,14 +24,14 @@ update_bat() {
 }
 
 update_vol() {
-  vol="󰎈 $(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
+  vol="󰕾 $(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
 }
 
 update_wifi() {
   if ping -c 1 ping.archlinux.org &> /dev/null; then
-    wifi="󰛳"
+    wifi="󰢾"
   else
-    wifi="󰅛"
+    wifi="󰢿"
   fi
 }
 

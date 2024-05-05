@@ -68,9 +68,9 @@ static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol arrange function */
-	{ "",	    tile },    /* first entry is default */
-	{ "",      NULL },    /* no layout function means floating behavior */
-	{ "",      monocle },
+	{ "",	    tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "󰖯",      monocle },
 };
 
 /* key definitions */
@@ -92,7 +92,7 @@ static const char *termcmd[]  = { "kitty", NULL };
 static const Key keys[] = {
 	/* modifier                     	key        	function        	argument */
 	{ MODKEY,                       	XK_r,      	spawn,          	{.v = dmenucmd } },
-	{ MODKEY,		             		XK_x,	 	spawn,          	{.v = termcmd } },
+	{ MODKEY,		             	XK_x,	 	spawn,          	{.v = termcmd } },
 	{ MODKEY,                       	XK_b,      	spawn,      		SHCMD ("xdg-open https:")},
 	{ MODKEY,                       	XK_e,      	spawn,      		SHCMD ("thunar")},
 	{ MODKEY|ShiftMask|ControlMask, 	XK_p,      	spawn,      		SHCMD ("flameshot full -p full /home/stipe/Pictures/")},
@@ -130,15 +130,12 @@ static const Key keys[] = {
 	TAGKEYS(                        	XK_4,                     		3)
 	TAGKEYS(                        	XK_5,                     		4)
 	TAGKEYS(                        	XK_6,                     		5)
-	TAGKEYS(                        	XK_7,                     		6)
-	TAGKEYS(                        	XK_8,                     		7)
-	TAGKEYS(                        	XK_9,                     		8)
-	{ MODKEY|ShiftMask|ControlMask,	XK_q,      	quit,           	{0} },
-	{ MODKEY|ControlMask|ShiftMask, 	XK_r,		spawn,              SHCMD("systemctl reboot")},
-	{ MODKEY|ControlMask|ShiftMask, 	XK_p,          spawn,              SHCMD("systemctl poweroff")},
-	{ MODKEY|ControlMask|ShiftMask, 	XK_s,	     spawn,       	     SHCMD("systemctl suspend")},
-	{ MODKEY,						XK_p,	     spawn,	          SHCMD("pavucontrol")},
-	{ MODKEY,						XK_c,	     spawn,	          SHCMD("code")},
+	{ MODKEY|ShiftMask|ControlMask,		XK_q,      	quit,           	{0} },
+	{ MODKEY|ControlMask|ShiftMask, 	XK_r,		spawn,              	SHCMD("systemctl reboot")},
+	{ MODKEY|ControlMask|ShiftMask, 	XK_p,          	spawn,              	SHCMD("systemctl poweroff")},
+	{ MODKEY|ControlMask|ShiftMask, 	XK_s,	     	spawn,       	     	SHCMD("systemctl suspend")},
+	{ MODKEY,				XK_p,	     	spawn,	          	SHCMD("pavucontrol")},
+	{ MODKEY,				XK_c,	     	spawn,	          	SHCMD("code")},
 };
 
 /* button definitions */
