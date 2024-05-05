@@ -103,7 +103,7 @@ static const Key keys[] = {
 	{ 0,					0x1008ff12,	spawn,			SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
 	{ 0,					0x1008ff11,	spawn,			SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
 	{ 0,					0x1008ff13,	spawn,			SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
-	{ MODKEY,                       	XK_m,      	togglebar,      	{0} },
+	{ MODKEY|ShiftMask,                     XK_m,      	togglebar,      	{0} },
 	{ MODKEY,                       	XK_j,      	focusstack,     	{.i = +1 } },
 	{ MODKEY,                       	XK_k,      	focusstack,     	{.i = -1 } },
 	{ MODKEY,                       	XK_i,      	incnmaster,     	{.i = +1 } },
