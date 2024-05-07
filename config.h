@@ -110,9 +110,12 @@ static const Key keys[] = {
 	{ MODKEY,                       	XK_d,      	incnmaster,     	{.i = -1 } },
 	{ MODKEY,                       	XK_h,      	setmfact,       	{.f = -0.05} },
 	{ MODKEY,                       	XK_l,      	setmfact,       	{.f = +0.05} },
+	{ MODKEY|ShiftMask,			XK_h,		setcfact,		{.f = +0.25} },
+	{ MODKEY|ShiftMask,			XK_l,		setcfact,		{.f = -0.25} },
+	{ MODKEY|ShiftMask,			XK_o,		setcfact,		{.f =  0.00} },
 	{ MODKEY,                       	XK_Return, 	zoom,           	{0} },
 	{ MODKEY,                       	XK_Tab,    	view,           	{0} },
-	{ MODKEY,                       	XK_q,          killclient,             {0} },
+	{ MODKEY,                       	XK_q,		killclient,             {0} },
 	{ MODKEY,                       	XK_t,      	setlayout,      	{.v = &layouts[0]} },
 	{ MODKEY,                       	XK_f,      	setlayout,      	{.v = &layouts[1]} },
 	{ MODKEY,                       	XK_m,      	fullscreen,      	{.v = &layouts[2]} },
@@ -146,6 +149,17 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	/* placemouse options, choose which feels more natural:
+	 *    0 - tiled position is relative to mouse cursor
+	 *    1 - tiled postiion is relative to window center
+	 *    2 - mouse pointer warps to window center
+	 *
+	 * The moveorplace uses movemouse or placemouse depending on the floating state
+	 * of the selected client. Set up individual keybindings for the two if you want
+	 * to control these separately (i.e. to retain the feature to move a tiled window
+	 * into a floating position).
+	 */
+	{ ClkClientWin,         MODKEY,         Button1,        moveorplace,    {.i = 2} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
