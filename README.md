@@ -1,6 +1,6 @@
 # Screenshot
 
-![image](/screenshot/0.png)
+![image](desktop.png)
 
 # Requirements
     sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig xorg-xinit xorg-xsetroot dunst picom feh dmenu ttf-hack-nerd
