@@ -8,14 +8,14 @@ static const unsigned int snap 			= 32;  				/* snap pixel */
 static const int swallowfloating          	= 1;		      		/* 1 means swallow floating windows by default */
 static const unsigned int systraypinning  	= 1;      			/* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft   	= 0;      			/* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing  	= 3;      			/* systray spacing */
+static const unsigned int systrayspacing  	= 2;      			/* systray spacing */
 static const int systraypinningfailfirst  	= 1;      			/* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray              	= 1;      			/* 0 means no systray */
 static const int showbar            		= 1;        			/* 0 means no bar */
 static const int topbar             		= 1;        			/* 0 means bottom bar */
 static const Bool viewontag              	= True;   			/* Switch view on tag switch */
-static const char *fonts[]          		= { "MesloLGS Nerd Font Mono:size=18", "NotoColorEmoji:pixelsize=18:antialias=true:autohint=true"  };
-static const char dmenufont[]       		= "MesloLGS Nerd Font Mono:size=16";
+static const char *fonts[]          		= { "MesloLGS Nerd Font Mono:size=14", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true"  };
+static const char dmenufont[]       		= "MesloLGS Nerd Font Mono:size=12";
 static const char col_1[]       = "#000000";
 static const char col_2[]       = "#FFFFFF";
 static const char *colors[][3]      = {
