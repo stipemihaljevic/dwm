@@ -33,7 +33,7 @@ static const char *const autostart[] = {
   "numlockx", "on", NULL,
   "dbus-update-activation-environment", "--systemd", "--all", NULL,
   "sh", "-c", "/opt/git/dwm/scripts/status", NULL,
-  "feh", "--bg-fill", "/opt/git/dwm/wallpaper.jpg", NULL,
+  "sh", "-c", "feh --randomize --bg-fill /opt/git/backgrounds/*", NULL,
   "flameshot", NULL,
   "lxpolkit", NULL,
   "dunst", NULL,
@@ -138,7 +138,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, 	XK_p,       spawn,              SHCMD("systemctl poweroff")},
 	{ MODKEY|ControlMask|ShiftMask, 	XK_s,	    spawn,       	    SHCMD("systemctl suspend")},
 	{ MODKEY,							XK_p,	    spawn,	          	SHCMD("pavucontrol")},
-	{ MODKEY,							XK_c,	    spawn,	          	SHCMD("code")},
+	{ MODKEY,							XK_c,	    spawn,	          	SHCMD("/opt/AppImages/./gearlever_cursor_970709.appimage")},
 };
 
 /* button definitions */
