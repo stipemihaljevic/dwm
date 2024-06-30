@@ -89,6 +89,8 @@ static const Key keys[] = {
 	/* modifier                     	key        	function        	argument */
 	{ MODKEY,                       	XK_r,      	spawn,          	{.v = dmenucmd } },
 	{ MODKEY,		       		XK_x,	 	spawn,          	{.v = termcmd } },
+	{ MODKEY,				XK_e,		spawn,			SHCMD ("thunar") },
+	{ MODKEY,				XK_p,		spawn,			SHCMD ("pavucontrol") },
 	{ MODKEY,                       	XK_b,      	spawn,      		SHCMD ("xdg-open https:")},
 	{ 0,                            	0x1008ff02,	spawn,      		SHCMD ("brightnessctl s +10%")},
 	{ 0,                            	0x1008ff03,	spawn,      		SHCMD ("brightnessctl s 10%-")},
